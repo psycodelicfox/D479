@@ -13,6 +13,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#booking">Book Now</a></li>
                 <li><a href="#accommodations">Accommodations</a></li>
                 <li><a href="#dining">Dining</a></li>
                 <li><a href="#transportation">Transportation</a></li>
@@ -38,19 +39,28 @@
             <li>Local cultural & food experiences</li>
         </ul>
     </section>
+
+    <section id="booking">
+        <h2>Book Your Experience</h2>
+        <ul>
+            <li><strong>Snorkeling Tour:</strong> <a href="#">Reserve Now</a></li>
+            <li><strong>Luxury Hotel:</strong> <a href="#">Reserve Now</a></li>
+            <li><strong>Honeymoon Package:</strong> <a href="#">Reserve Now</a></li>
+        </ul>
+    </section>
     
     <section id="accommodations">
         <h2>Where to Stay</h2>
         <p>Choose from a range of accommodations:</p>
         <div class="filters">
-            <button>Hotels</button>
-            <button>Private Condos</button>
-            <button>Beach Houses</button>
+            <button onclick="filterAccommodations('hotel')">Hotels</button>
+            <button onclick="filterAccommodations('condo')">Private Condos</button>
+            <button onclick="filterAccommodations('beach-house')">Beach Houses</button>
         </div>
-        <ul>
-            <li><strong>Luxury Hotel:</strong> Oceanfront suites with full amenities <a href="#booking" class="book-btn">Book Now</a></li>
-            <li><strong>Cozy Beach House:</strong> Private rental with stunning views <a href="#booking" class="book-btn">Book Now</a></li>
-            <li><strong>City Condo:</strong> Perfect for business travelers <a href="#booking" class="book-btn">Book Now</a></li>
+        <ul id="accommodation-list">
+            <li class="hotel"><strong>Luxury Hotel:</strong> Oceanfront suites with full amenities <a href="#booking" class="book-btn">Book Now</a></li>
+            <li class="beach-house"><strong>Cozy Beach House:</strong> Private rental with stunning views <a href="#booking" class="book-btn">Book Now</a></li>
+            <li class="condo"><strong>City Condo:</strong> Perfect for business travelers <a href="#booking" class="book-btn">Book Now</a></li>
         </ul>
     </section>
     
@@ -92,6 +102,19 @@
     
     <footer>
         <p>2025 Taniti Tourism Board. All rights reserved.</p>
+        <p>Follow us: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </p>
     </footer>
+
+    <script>
+        function filterAccommodations(type) {
+            document.querySelectorAll("#accommodation-list li").forEach(item => {
+                item.style.display = item.classList.contains(type) ? "block" : "none";
+            });
+        }
+    </script>
 </body>
 </html>
